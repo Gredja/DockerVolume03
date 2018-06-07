@@ -1,0 +1,14 @@
+FROM microsoft/dotnet:2.0-sdk as env
+WORKDIR /app
+
+COPY *.csproj ./
+RUN dotnet restore
+
+COPY . ./
+RUN yum -y install wget
+RUN dotnet publish -c Debug -o artifacts
+
+FROM microsoft/dotnet:2.0-runtime
+WORKDIR /app
+COPY --from=env /app/artifacts .
+ENTRYPOINT ["dotnet", "DockerVolume.dll"]

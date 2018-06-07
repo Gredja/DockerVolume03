@@ -1,7 +1,6 @@
-using System;
+﻿using System;
 using System.Globalization;
 using DockerVolume.Services;
-
 
 namespace DockerVolume
 {

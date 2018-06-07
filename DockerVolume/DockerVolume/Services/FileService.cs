@@ -1,9 +1,10 @@
-﻿using System;
+﻿
+using System;
 using System.IO;
 
 namespace DockerVolume.Services
 {
-   public class FileService : IFileService
+    public class FileService : IFileService
     {
         private const string FilePath = "text/text.txt";
 
